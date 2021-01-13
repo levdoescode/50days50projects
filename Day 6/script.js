@@ -7,14 +7,11 @@ checkBoxes();
 
 function checkBoxes()
 {
-    const trigger = window.innerHeight / 5 * 4;
-    const trig = window.innerHeight;
+    const trigger = window.innerHeight - document.querySelector('.box').offsetHeight;
     boxes.forEach(box =>
     {
         const boxTop = box.getBoundingClientRect().top;
-        const boxT = window.scrollY + box.getBoundingClientRect().top;
-        const asfasdf = trig + document.querySelector('.box').offsetHeight / 5;
-        if(boxTop < window.innerHeight - document.querySelector('.box').offsetHeight)
+        if(boxTop < trigger)
         {
             box.classList.add('show');
         }
